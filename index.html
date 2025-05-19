@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Boost</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #FFDEE9, #B5FFFC);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #333;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+      color: #444;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+      animation: fadeIn 0.6s ease;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+    .content {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      margin-top: auto;
+      font-size: 0.9em;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌞 Daily Boost</h1>
+
+  <div class="card">
+    <div class="title">✨ Inspiration</div>
+    <div class="content" id="quote"></div>
+  </div>
+
+  <div class="card">
+    <div class="title">🚀 Productivity Tip</div>
+    <div class="content" id="tip"></div>
+  </div>
+
+  <div class="card">
+    <div class="title">🤯 Fun Fact</div>
+    <div class="content" id="fact"></div>
+  </div>
+
+  <div class="card">
+    <div class="title">🧘 Mood Booster</div>
+    <div class="content" id="booster"></div>
+  </div>
+
+  <footer>Made with ❤️ for your daily happiness</footer>
+
+  <script>
+    const data = {
+      quotes: [
+        "Believe you can and you're halfway there. – Theodore Roosevelt",
+        "Dream big and dare to fail. – Norman Vaughan",
+        "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+        "Start where you are. Use what you have. Do what you can.",
+        "Stay hungry, stay foolish. – Steve Jobs"
+      ],
+      tips: [
+        "Start your day by planning your top 3 priorities.",
+        "Use the Pomodoro technique: 25 minutes focus, 5 minutes break.",
+        "Eliminate distractions: silence your phone for one hour.",
+        "Batch similar tasks to stay in flow.",
+        "Don’t be busy. Be productive."
+      ],
+      facts: [
+        "Honey never spoils. Archaeologists have found 3,000-year-old jars of honey in Egyptian tombs — and they're edible.",
+        "Bananas are berries, but strawberries aren’t.",
+        "Octopuses have three hearts and blue blood.",
+        "The Eiffel Tower can be 15 cm taller during summer due to heat expansion.",
+        "Sharks existed before trees!"
+      ],
+      boosters: [
+        "You’re doing better than you think. Keep going!",
+        "Why did the scarecrow win an award? Because he was outstanding in his field.",
+        "Take a deep breath. You’ve got this.",
+        "Every little progress matters. Celebrate it.",
+        "Smile. Science says it boosts your mood instantly!"
+      ]
+    };
+
+    const todayIndex = new Date().getDay(); // 0 (Sunday) to 6 (Saturday)
+
+    document.getElementById("quote").innerText = data.quotes[todayIndex % data.quotes.length];
+    document.getElementById("tip").innerText = data.tips[todayIndex % data.tips.length];
+    document.getElementById("fact").innerText = data.facts[todayIndex % data.facts.length];
+    document.getElementById("booster").innerText = data.boosters[todayIndex % data.boosters.length];
+  </script>
+</body>
+</html>
